@@ -1,0 +1,32 @@
+{
+  "name": "renderium-examples",
+  "version": "0.1.0",
+  "description": "Renderium examples",
+  "keywords": [
+    "canvas",
+    "webgl",
+    "renderium"
+  ],
+  "license": "MIT",
+  "homepage": "https://github.com/renderium/examples",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/renderium/examples"
+  },
+  "bugs": {
+    "url": "https://github.com/renderium/examples/issues",
+    "email": "broadsw.rd@yandex.ru"
+  },
+  "author": {
+    "name": "Vladimir Bykov",
+    "email": "broadsw.rd@yandex.ru",
+    "url": "https://github.com/broadsw0rd"
+  },
+  "scripts": {
+    "check": "standard **/*.js | snazzy"
+  },
+  "devDependencies": {
+    "snazzy": "7.0.0",
+    "standard": "10.0.2"
+  }
+}
