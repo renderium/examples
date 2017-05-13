@@ -13,7 +13,7 @@ Example | Canvas | Webgl | REPL
 [Drawing circles](https://github.com/renderium/examples/tree/master/circles) | [Canvas](http://codepen.io/broadsw0rd/pen/xEXNkP) | [Webgl](http://codepen.io/broadsw0rd/pen/LWEzqL) | REPL
 [Drawing images](https://github.com/renderium/examples/tree/master/images) | [Canvas](http://codepen.io/broadsw0rd/pen/zKPOKd) | [Webgl](http://codepen.io/broadsw0rd/pen/ZeYXPG) | REPL
 [Drawing polygons](https://github.com/renderium/examples/tree/master/polygons) | [Canvas](http://codepen.io/broadsw0rd/pen/NRBJpB) | [Webgl](http://codepen.io/broadsw0rd/pen/JWorzW) | REPL
-Drawing polylines | [Canvas](http://codepen.io/broadsw0rd/pen/amjrKN) | [Webgl](http://codepen.io/broadsw0rd/pen/ryaGbe) | REPL
+[Drawing polylines](https://github.com/renderium/examples/tree/master/polylines) | [Canvas](http://codepen.io/broadsw0rd/pen/amjrKN) | [Webgl](http://codepen.io/broadsw0rd/pen/ryaGbe) | REPL
 Drawing rectangles | [Canvas](http://codepen.io/broadsw0rd/pen/VKGZRq) | [Webgl](http://codepen.io/broadsw0rd/pen/LWEzvj) | REPL
 Drawing text | [Canvas](http://codepen.io/broadsw0rd/pen/ozPbRa) | [Webgl](http://codepen.io/broadsw0rd/pen/PpwJgy) | REPL
 Drawing text with different alignments | [Canvas](http://codepen.io/broadsw0rd/pen/LRkoqJ) | [Webgl](http://codepen.io/broadsw0rd/pen/ygqMad) | REPL
