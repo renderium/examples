@@ -34,7 +34,6 @@ class Text extends Renderium.Component {
 
 layer.addComponents([
   new Text({
-    layer: layer,
     position: new Vector(100, 100),
     text: 'Sample text',
     color: Renderium.colors.RED,
@@ -42,7 +41,6 @@ layer.addComponents([
     size: 16
   }),
   new Text({
-    layer: layer,
     position: new Vector(200, 100),
     text: 'Sample text',
     color: Renderium.colors.GREEN,
@@ -50,7 +48,6 @@ layer.addComponents([
     size: 16
   }),
   new Text({
-    layer: layer,
     position: new Vector(345, 100),
     text: 'Sample text',
     color: layer.createGradient({
