@@ -1,5 +1,5 @@
 /*
-global Renderium Animation Vector layer
+global Renderium Vector layer
 */
 
 class ImageComponent extends Renderium.Component {
@@ -10,6 +10,8 @@ class ImageComponent extends Renderium.Component {
     this.height = options.height
     this.opacity = options.opacity
 
+    this.position = new Vector()
+
     this._shouldRedraw = true
   }
 
@@ -17,13 +19,15 @@ class ImageComponent extends Renderium.Component {
     return this._shouldRedraw
   }
 
-  draw (layer) {
+  plot (layer) {
     var x = layer.width / 2 - this.width / 2
     var y = layer.height / 2 - this.height / 2
-    var position = new Vector(x, y)
+    this.position = new Vector(x, y)
+  }
 
+  draw (layer) {
     layer.drawImage({
-      position: position,
+      position: this.position,
       image: this.image,
       width: this.width,
       height: this.height,

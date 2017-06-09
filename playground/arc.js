@@ -1,5 +1,5 @@
 /*
-global Renderium Animation Vector layer
+global Renderium Vector layer
 */
 
 class Arc extends Renderium.Component {
@@ -11,6 +11,8 @@ class Arc extends Renderium.Component {
     this.length = options.length
     this.width = options.width
 
+    this.position = new Vector()
+
     this._shouldRedraw = true
   }
 
@@ -18,11 +20,13 @@ class Arc extends Renderium.Component {
     return this._shouldRedraw
   }
 
+  plot (layer) {
+    this.position = new Vector(layer.width / 2, layer.height / 2)
+  }
+
   draw (layer) {
-    var position = new Vector(layer.width / 2, layer.height / 2)
-    
     layer.drawArc({
-      position: position,
+      position: this.position,
       color: this.color,
       radius: this.radius,
       startAngle: this.theta,
@@ -59,7 +63,7 @@ class Arc extends Renderium.Component {
     this._theta = theta
     this._shouldRedraw = true
   }
-  
+
   get length () {
     return this._length
   }

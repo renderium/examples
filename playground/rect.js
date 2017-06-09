@@ -12,6 +12,8 @@ class Rect extends Renderium.Component {
     this.height = options.height
     this.strokeWidth = options.strokeWidth
 
+    this.position = new Vector()
+
     this._shouldRedraw = true
   }
 
@@ -19,13 +21,15 @@ class Rect extends Renderium.Component {
     return this._shouldRedraw
   }
 
-  draw (layer) {
+  plot (layer) {
     var x = layer.width / 2 - this.width / 2
     var y = layer.height / 2 - this.height / 2
-    var position = new Vector(x, y)
+    this.position = new Vector(x, y)
+  }
 
+  draw (layer) {
     layer.drawRect({
-      position: position,
+      position: this.position,
       color: this.color,
       fillColor: this.fillColor,
       width: this.width,
