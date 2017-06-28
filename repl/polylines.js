@@ -9,6 +9,7 @@ class Polyline extends Renderium.Component {
     this.position = options.position
     this.color = options.color
     this.width = options.width
+    this.opacity = options.opacity
     this.lineDash = options.lineDash
 
     this.points = []
@@ -38,37 +39,45 @@ class Polyline extends Renderium.Component {
     layer.drawPolyline({
       points: this.points,
       color: this.color,
-      lineDash: this.lineDash,
-      width: this.width
+      width: this.width,
+      opacity: this.opacity,
+      lineDash: this.lineDash
     })
   }
 }
 
 layer.addComponents([
   new Polyline({
-    position: new Vector(100, 100),
+    position: new Vector(75, 75),
     color: Renderium.colors.RED,
-    width: 1
+    width: 1,
+    opacity: 1,
+    lineDash: []
   }),
   new Polyline({
-    position: new Vector(200, 100),
-    color: Renderium.colors.GREEN,
-    width: 5
-  }),
-  new Polyline({
-    position: new Vector(300, 100),
+    position: new Vector(175, 75),
     color: layer.createGradient({
-      start: new Vector(0, 75),
-      end: new Vector(0, 125),
+      start: new Vector(0, 50),
+      end: new Vector(0, 100),
       from: Renderium.colors.LIGHT_BLUE,
       to: Renderium.colors.INDIGO
     }),
-    width: 2
+    width: 10,
+    opacity: 1,
+    lineDash: []
   }),
   new Polyline({
-    position: new Vector(425, 100),
-    color: Renderium.colors.YELLOW,
+    position: new Vector(275, 75),
+    color: Renderium.colors.GREEN,
+    width: 5,
+    opacity: 0.5,
+    lineDash: []
+  }),
+  new Polyline({
+    position: new Vector(375, 75),
+    color: Renderium.colors.PURPLE,
     width: 2,
-    lineDash: [2, 2]
+    opacity: 1,
+    lineDash: [10, 5]
   })
 ])
