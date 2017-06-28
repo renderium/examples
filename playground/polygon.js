@@ -2,7 +2,7 @@
 global Renderium Vector layer
 */
 
-const CIRCUMFERENCE = 2 * Math.PI
+const DOUBLE_PI = 2 * Math.PI
 const HALF_PI = Math.PI / 2
 
 class Polygon extends Renderium.Component {
@@ -25,7 +25,7 @@ class Polygon extends Renderium.Component {
     var points = []
 
     for (var i = 0, theta = HALF_PI; i < vertices; i++) {
-      theta += CIRCUMFERENCE / vertices
+      theta += DOUBLE_PI / vertices
       points.push(position.add(Vector.fromAngle(theta, radius)))
     }
 

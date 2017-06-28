@@ -2,7 +2,7 @@
 global Renderium Vector layer
 */
 
-const CIRCUMFERENCE = 2 * Math.PI
+const DOUBLE_PI = 2 * Math.PI
 const HALF_PI = Math.PI / 2
 
 class Polygon extends Renderium.Component {
@@ -15,6 +15,8 @@ class Polygon extends Renderium.Component {
     this.color = options.color
     this.fillColor = options.fillColor
     this.width = options.width
+    this.opacity = options.opacity
+    this.lineDash = options.lineDash
 
     this.points = []
 
@@ -25,7 +27,7 @@ class Polygon extends Renderium.Component {
     var points = []
 
     for (var i = 0, theta = HALF_PI; i < vertices; i++) {
-      theta += CIRCUMFERENCE / vertices
+      theta += DOUBLE_PI / vertices
       points.push(position.add(Vector.fromAngle(theta, radius)))
     }
 
@@ -45,7 +47,9 @@ class Polygon extends Renderium.Component {
       points: this.points,
       color: this.color,
       fillColor: this.fillColor,
-      width: this.width
+      width: this.width,
+      opacity: this.opacity,
+      lineDash: this.lineDash
     })
 
     this._shouldRedraw = false
@@ -54,37 +58,58 @@ class Polygon extends Renderium.Component {
 
 layer.addComponents([
   new Polygon({
-    position: new Vector(100, 100),
+    position: new Vector(75, 75),
     vertices: 6,
     radius: 25,
     color: Renderium.colors.RED,
-    width: 1
+    fillColor: void 0,
+    width: 1,
+    opacity: 1,
+    lineDash: []
   }),
   new Polygon({
-    position: new Vector(200, 100),
+    position: new Vector(175, 75),
     vertices: 6,
     radius: 25,
-    color: Renderium.colors.GREEN,
-    width: 5
-  }),
-  new Polygon({
-    position: new Vector(300, 100),
-    vertices: 6,
-    radius: 25,
-    color: Renderium.colors.GREEN,
+    color: void 0,
     fillColor: layer.createGradient({
-      start: new Vector(0, 75),
-      end: new Vector(0, 125),
+      start: new Vector(0, 50),
+      end: new Vector(0, 100),
       from: Renderium.colors.LIGHT_BLUE,
       to: Renderium.colors.INDIGO
     }),
-    width: 2
+    width: 2,
+    opacity: 1,
+    lineDash: []
   }),
   new Polygon({
-    position: new Vector(425, 100),
+    position: new Vector(300, 75),
     vertices: 6,
     radius: 50,
     color: Renderium.colors.YELLOW,
-    width: 2
+    fillColor: void 0,
+    width: 2,
+    opacity: 1,
+    lineDash: []
+  }),
+  new Polygon({
+    position: new Vector(425, 75),
+    vertices: 6,
+    radius: 25,
+    color: Renderium.colors.GREEN,
+    fillColor: void 0,
+    width: 5,
+    opacity: 0.5,
+    lineDash: []
+  }),
+  new Polygon({
+    position: new Vector(525, 75),
+    vertices: 6,
+    radius: 25,
+    color: Renderium.colors.PURPLE,
+    fillColor: void 0,
+    width: 5,
+    opacity: 1,
+    lineDash: [10, 5]
   })
 ])

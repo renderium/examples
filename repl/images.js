@@ -1,5 +1,5 @@
 /*
-global Renderium Animation Vector layer
+global Renderium Vector layer
 */
 
 class ImageComponent extends Renderium.Component {
@@ -12,10 +12,6 @@ class ImageComponent extends Renderium.Component {
     this.opacity = options.opacity
 
     this._shouldRedraw = true
-
-    this.animation = new Animation({
-      duration: 1000
-    })
   }
 
   shouldRedraw () {
