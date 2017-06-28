@@ -11,6 +11,8 @@ class Arc extends Renderium.Component {
     this.startAngle = options.startAngle
     this.endAngle = options.endAngle
     this.width = options.width
+    this.opacity = options.opacity
+    this.lineDash = options.lineDash
     this.duration = options.duration
 
     this._startAngle = this.startAngle
@@ -44,7 +46,9 @@ class Arc extends Renderium.Component {
       radius: this.radius,
       startAngle: this._startAngle,
       endAngle: this._endAngle,
-      width: this.width
+      width: this.width,
+      opacity: this.opacity,
+      lineDash: this.lineDash
     })
 
     this._shouldRedraw = false
@@ -60,19 +64,21 @@ class Arc extends Renderium.Component {
 
 layer.addComponents([
   new Arc({
-    position: new Vector(100, 100),
+    position: new Vector(75, 75),
     color: Renderium.colors.RED,
     radius: 25,
     startAngle: 0,
     endAngle: 1.5 * Math.PI,
     width: 1,
+    opacity: 1,
+    lineDash: [],
     duration: 1000
   }),
   new Arc({
-    position: new Vector(200, 100),
+    position: new Vector(175, 75),
     color: layer.createGradient({
-      start: new Vector(0, 75),
-      end: new Vector(0, 125),
+      start: new Vector(0, 50),
+      end: new Vector(0, 100),
       from: Renderium.colors.LIGHT_BLUE,
       to: Renderium.colors.INDIGO
     }),
@@ -80,24 +86,41 @@ layer.addComponents([
     startAngle: 0,
     endAngle: 1.5 * Math.PI,
     width: 10,
+    opacity: 1,
+    lineDash: [],
     duration: 1000
   }),
   new Arc({
-    position: new Vector(300, 100),
-    color: Renderium.colors.GREEN,
-    radius: 25,
-    startAngle: Math.PI,
-    endAngle: 0.5 * Math.PI,
-    width: 5,
-    duration: 1000
-  }),
-  new Arc({
-    position: new Vector(425, 100),
+    position: new Vector(300, 75),
     color: Renderium.colors.YELLOW,
     radius: 50,
     startAngle: Math.PI,
     endAngle: 0.5 * Math.PI,
     width: 2,
+    opacity: 1,
+    lineDash: [],
+    duration: 1000
+  }),
+  new Arc({
+    position: new Vector(425, 75),
+    color: Renderium.colors.GREEN,
+    radius: 25,
+    startAngle: Math.PI,
+    endAngle: 0.5 * Math.PI,
+    width: 5,
+    opacity: 0.5,
+    lineDash: [],
+    duration: 1000
+  }),
+  new Arc({
+    position: new Vector(525, 75),
+    color: Renderium.colors.PURPLE,
+    radius: 25,
+    startAngle: Math.PI,
+    endAngle: 0.5 * Math.PI,
+    width: 5,
+    opacity: 1,
+    lineDash: [10, 5],
     duration: 1000
   })
 ])
