@@ -12,6 +12,8 @@ class Rect extends Renderium.Component {
     this.width = options.width
     this.height = options.height
     this.strokeWidth = options.strokeWidth
+    this.opacity = options.opacity
+    this.lineDash = options.lineDash
 
     this._shouldRedraw = true
   }
@@ -27,7 +29,9 @@ class Rect extends Renderium.Component {
       fillColor: this.fillColor,
       width: this.width,
       height: this.height,
-      strokeWidth: this.strokeWidth
+      strokeWidth: this.strokeWidth,
+      opacity: this.opacity,
+      lineDash: this.lineDash
     })
 
     this._shouldRedraw = false
@@ -36,36 +40,58 @@ class Rect extends Renderium.Component {
 
 layer.addComponents([
   new Rect({
-    position: new Vector(75, 75),
+    position: new Vector(50, 50),
     color: Renderium.colors.RED,
+    fillColor: void 0,
     width: 50,
     height: 50,
-    strokeWidth: 1
+    strokeWidth: 1,
+    opacity: 1,
+    lineDash: []
   }),
   new Rect({
-    position: new Vector(175, 75),
-    color: Renderium.colors.GREEN,
-    width: 50,
-    height: 50,
-    strokeWidth: 5
-  }),
-  new Rect({
-    position: new Vector(275, 75),
+    position: new Vector(150, 50),
+    color: void 0,
     fillColor: layer.createGradient({
-      start: new Vector(0, 75),
-      end: new Vector(0, 125),
+      start: new Vector(0, 50),
+      end: new Vector(0, 100),
       from: Renderium.colors.LIGHT_BLUE,
       to: Renderium.colors.INDIGO
     }),
-    width: 100,
+    width: 50,
     height: 50,
-    strokeWidth: 5
+    strokeWidth: 2,
+    opacity: 1,
+    lineDash: []
   }),
   new Rect({
-    position: new Vector(415, 50),
+    position: new Vector(250, 25),
     color: Renderium.colors.YELLOW,
-    width: 80,
+    fillColor: void 0,
+    width: 100,
     height: 100,
-    strokeWidth: 2
+    strokeWidth: 2,
+    opacity: 1,
+    lineDash: []
+  }),
+  new Rect({
+    position: new Vector(400, 50),
+    color: Renderium.colors.GREEN,
+    fillColor: void 0,
+    width: 50,
+    height: 50,
+    strokeWidth: 5,
+    opacity: 0.5,
+    lineDash: []
+  }),
+  new Rect({
+    position: new Vector(500, 50),
+    color: Renderium.colors.PURPLE,
+    fillColor: void 0,
+    width: 50,
+    height: 50,
+    strokeWidth: 5,
+    opacity: 1,
+    lineDash: [10, 5]
   })
 ])
