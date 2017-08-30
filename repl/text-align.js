@@ -75,6 +75,6 @@ layer.addComponent(
     font: 'Helvetica',
     size: 24,
     textColor: Renderium.colors.BLUE,
-    crossColor: Renderium.colors.YELLOW
+    crossColor: Renderium.colors.RED
   })
 )

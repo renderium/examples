@@ -11,6 +11,7 @@ class Text extends Renderium.Component {
     this.color = options.color
     this.font = options.font
     this.size = options.size
+    this.opacity = options.opacity
 
     this._shouldRedraw = true
   }
@@ -25,7 +26,8 @@ class Text extends Renderium.Component {
       text: this.text,
       color: this.color,
       font: this.font,
-      size: this.size
+      size: this.size,
+      opacity: this.opacity
     })
 
     this._shouldRedraw = false
@@ -34,29 +36,32 @@ class Text extends Renderium.Component {
 
 layer.addComponents([
   new Text({
-    position: new Vector(100, 100),
-    text: 'Sample text',
+    position: new Vector(75, 75),
+    text: 'Text',
     color: Renderium.colors.RED,
     font: 'courier',
-    size: 16
+    size: 16,
+    opacity: 1,
   }),
   new Text({
-    position: new Vector(200, 100),
-    text: 'Sample text',
-    color: Renderium.colors.GREEN,
-    font: 'serif',
-    size: 16
-  }),
-  new Text({
-    position: new Vector(345, 100),
-    text: 'Sample text',
+    position: new Vector(175, 75),
+    text: 'Text',
     color: layer.createGradient({
-      start: new Vector(0, 75),
-      end: new Vector(0, 125),
+      start: new Vector(0, 50),
+      end: new Vector(0, 100),
       from: Renderium.colors.LIGHT_BLUE,
       to: Renderium.colors.INDIGO
     }),
     font: 'sans-serif',
-    size: 36
+    size: 48,
+    opacity: 1,
+  }),
+  new Text({
+    position: new Vector(275, 75),
+    text: 'Text',
+    color: Renderium.colors.GREEN,
+    font: 'serif',
+    size: 16,
+    opacity: 0.5,
   })
 ])
