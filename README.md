@@ -7,7 +7,7 @@
 
 ## Examples
 
-Example | Canvas | Webgl | REPL
+Example | [Canvas](https://codepen.io/collection/AEydae/) | [Webgl](https://codepen.io/collection/XMjQrb/) | [REPL](https://renderium.github.io/repl/)
 ------- | ------- | ------- | ------- 
 [Drawing arcs](https://github.com/renderium/examples/blob/master/repl/arcs.js) | [Canvas](http://codepen.io/broadsw0rd/full/amyjmZ) | [Webgl](http://codepen.io/broadsw0rd/full/XMJeOd) | REPL
 [Drawing circles](https://github.com/renderium/examples/blob/master/repl/circles.js) | [Canvas](http://codepen.io/broadsw0rd/full/xEXNkP) | [Webgl](http://codepen.io/broadsw0rd/full/LWEzqL) | REPL
