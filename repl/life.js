@@ -116,6 +116,6 @@ function rand (start, end) {
 layer.addComponents([
   new Life({
     color: colors[rand(0, colors.length - 1)],
-    cellSize: 5
+    cellSize: 2
   })
 ])
