@@ -12,7 +12,7 @@ var renderer = window.renderer = new Canvas({
 var component = new Component(renderer)
 
 window.onload = function () {
-  var gui = dat.GUI()
+  var gui = new dat.GUI()
 
   component.options.forEach(option => {
     switch (option.type) {
