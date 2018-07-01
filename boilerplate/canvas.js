@@ -1,23 +1,26 @@
-/*
-global Renderium Animation Vector
-*/
-
 var raf = window.requestAnimationFrame
 
 raf(function loop (time) {
-  Renderium.digest(time)
-  Animation.animate(time)
+  Canvas.digest(time)
   raf(loop)
 })
 
-var renderer = window.renderer = new Renderium({
-  el: document.getElementById('root')
+var renderer = window.renderer = new Canvas({
+  el: document.body
 })
 
-var layer = window.layer = new Renderium.CanvasLayer({
-  Vector
+var component = new Component(renderer)
+
+var gui = dat.GUI()
+
+component.options.forEach(option => {
+  switch (option.type) {
+    case 'color': {
+      gui.addColor(component, option.name)
+      break
+    }
+    default: {
+      gui.add(component, option.name, option.min, option.max)
+    }
+  }
 })
-
-renderer.addLayer(layer)
-
-Renderium.spawn(renderer)
