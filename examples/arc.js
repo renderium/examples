@@ -14,6 +14,7 @@ class Component {
     this.renderer.render(renderer => {
       renderer.arc(this)
     })
+    this.renderer.enqueue()
   }
 
   get x () {
