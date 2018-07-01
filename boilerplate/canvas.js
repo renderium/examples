@@ -11,16 +11,18 @@ var renderer = window.renderer = new Canvas({
 
 var component = new Component(renderer)
 
-var gui = dat.GUI()
+window.onload = function () {
+  var gui = dat.GUI()
 
-component.options.forEach(option => {
-  switch (option.type) {
-    case 'color': {
-      gui.addColor(component, option.name)
-      break
+  component.options.forEach(option => {
+    switch (option.type) {
+      case 'color': {
+        gui.addColor(component, option.name)
+        break
+      }
+      default: {
+        gui.add(component, option.name, option.min, option.max)
+      }
     }
-    default: {
-      gui.add(component, option.name, option.min, option.max)
-    }
-  }
-})
+  })
+}
